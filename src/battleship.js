@@ -1,15 +1,14 @@
 class Battleship {
   hit() {
     this.hits += 1
-    this.isSunk()
+    this.sunk = this.isSunk()
   }
 
   isSunk() {
     if (this.hits >= this.length) {
-      this.sunk = true
-      return
+      return true
     }
-    this.sunk = false
+    return false
   }
   constructor(length) {
     this.length = length
