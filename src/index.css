@@ -1,53 +1,73 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /* 2. Remove default margin */
-  * {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma;
-  }
-  body {
-    /* 3. Add accessible line-height */
-    line-height: 1.5;
-    /* 4. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
-  }
-  /* 5. Improve media defaults */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /* 6. Inherit fonts for form controls */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /* 7. Avoid text overflows */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-    margin: 0px;
-    padding: 0px;
-  }
-  /* 8. Improve line wrapping */
-  p {
-    text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  margin: 0px;
+  padding: 0px;
+}
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/*
     9. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
-  }
+#root,
+#__next {
+  isolation: isolate;
+}
 
-  /*
+/*
   ####################################################
   ####################################################
   ####################################################
   */
-
 
 .bg {
   width: 100vw;
@@ -61,7 +81,7 @@
   background-color: darkgray;
   display: flex;
   align-items: center;
-
+  box-shadow: inset 0px 30px 20px grey;
 }
 
 .logoText {
@@ -69,37 +89,43 @@
   margin-right: 5rem;
   color: aliceblue;
   font-size: 2.5rem;
-  text-shadow: 2px 2px black, -1px -1px black;
+  text-shadow:
+    2px 2px black,
+    -1px -1px black;
   letter-spacing: 0.5rem;
   font-weight: bold;
-} 
+}
 
 .button {
   padding: 0.5rem;
   width: fit-content;
   height: fit-content;
-  background-color:red;
+  background-color: red;
   color: aliceblue;
   border-radius: 0.5rem;
-  box-shadow: 5px 5px 2px rgb(73, 73, 73), inset -5px -5px 10px darkred,inset 5px 5px 20px lightcoral;
+  box-shadow:
+    5px 5px 2px rgb(73, 73, 73),
+    inset -5px -5px 10px darkred,
+    inset 5px 5px 20px lightcoral;
 }
 
 #newGame {
   font-size: 2rem;
   font-weight: bold;
   outline: 1px solid rgb(113, 0, 0);
-
 }
 
 .button:hover {
-  text-shadow: 2px 2px lightcoral, -1px -1px lightcoral;
-
+  text-shadow:
+    2px 2px lightcoral,
+    -1px -1px lightcoral;
 }
 .button:active {
-  box-shadow:inset 5px 5px 10px darkred,inset -5px -5px 20px lightcoral,inset -2px -2px 5px darkred;
-
+  box-shadow:
+    inset 5px 5px 10px darkred,
+    inset -5px -5px 20px lightcoral,
+    inset -2px -2px 5px darkred;
 }
-
 
 .midler {
   height: 85vh;
@@ -121,8 +147,6 @@
   flex-direction: column;
   justify-content: center;
   align-self: flex-end;
-  outline: 1px solid red  ;
-
 }
 
 .nameField {
@@ -134,10 +158,10 @@
   font-size: 2.9rem;
 }
 
-.nameField:first-child{
+.nameField:first-child {
   color: blue;
 }
-.nameField:last-child{
+.nameField:last-child {
   color: red;
 }
 
@@ -145,8 +169,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: 1px solid red  ;
-
 }
 
 .shipMenu {
@@ -155,13 +177,18 @@
   align-self: flex-end;
   background-color: darkgrey;
   outline: 0.2rem solid gray;
-  outline-offset: - 0.2rem;
+  outline-offset: -0.2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 1rem;
 }
 
 .zeroMeridian {
   width: 5%;
   height: 100%;
-  
 }
 
 .board {
@@ -171,17 +198,93 @@
   outline: 3px dashed white;
 }
 
-.cell {
-  width: 5vw;
-  height: 5vw;
-  outline: 3px dashed white;
+.grid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.shipCell {
-
+.cellEmpty {
+  width: 10%;
+  height: 10%;
+  outline: 1px dashed white;
 }
 
-.shipPlacementCell {
-
+.cellShip {
+  width: 10%;
+  height: 10%;
+  outline: 1px dashed rgb(0, 0, 0);
+  background-color: gray;
 }
 
+.dmg {
+  background-color: red;
+}
+
+.locator {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 100%;
+  background: rgb(88, 222, 173);
+  background: radial-gradient(
+    circle,
+    rgba(88, 222, 173, 1) 0%,
+    rgba(15, 54, 24, 1) 100%
+  );
+  border-top: lightgrey;
+  border-bottom: rgb(73, 73, 73);
+  box-shadow:
+    5px 10px 3px rgba(0, 0, 0, 0.8),
+    inset -10px -10px 50px rgba(10, 40, 17, 0.8),
+    inset 40px 40px 20px rgba(124, 218, 197, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  height: 100%;
+  width: 1%;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.arrowHead {
+  background-color: rgba(0, 255, 162, 1);
+  height: 50%;
+  width: 100%;
+  box-shadow:
+    3px 3px 3px rgba(0, 255, 162, 1),
+    -3px -3px 3px rgba(0, 255, 162, 1),
+    -10px 0px 20px rgba(0, 255, 162, 1);
+}
+
+.shipsPlace {
+  width: 100%;
+  height: 50%;
+  outline: 2px solid rgb(73, 73, 73);
+  border-radius: 1rem;
+  background-color: grey;
+  box-shadow:
+    inset 10px 10px 50px rgb(73, 73, 73),
+    inset 0px -10px 20px lightgray;
+}

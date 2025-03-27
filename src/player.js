@@ -6,10 +6,4 @@ class Player {
   }
 }
 
-class Bot extends Player {
-  constructor() {
-    super(gameboard)
-  }
-}
-
-module.exports = { Player, Bot }
+module.exports = Player

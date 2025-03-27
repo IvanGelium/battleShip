@@ -47,6 +47,7 @@ class Gameboard {
         this.ships.push(ship)
         break
     }
+    console.log(ship)
   }
 
   isAvialable(ship, coordObj, orientation) {
@@ -100,6 +101,27 @@ class Gameboard {
       }
     }
     return true
+  }
+
+  rndPlace() {
+    let left = [5, 4, 3, 3, 2]
+    let c = 0
+    while (left.length > 0 && c < 5) {
+      const a = this.ships.length
+      while (this.ships.length === a) {
+        const obj = {
+          x: Math.ceil(Math.random() * 9),
+          y: Math.ceil(Math.random() * 9),
+        }
+        this.shipPlacement(
+          left[left.length - 1],
+          obj,
+          Math.random() > 0.6 ? 'x' : 'y'
+        )
+      }
+      c++
+      left.pop()
+    }
   }
 
   constructor() {
