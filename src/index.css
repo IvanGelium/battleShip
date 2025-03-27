@@ -5,6 +5,7 @@
   /* 2. Remove default margin */
   * {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma;
   }
   body {
     /* 3. Add accessible line-height */
@@ -24,6 +25,8 @@
   /* 7. Avoid text overflows */
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
+    margin: 0px;
+    padding: 0px;
   }
   /* 8. Improve line wrapping */
   p {
@@ -45,13 +48,140 @@
   ####################################################
   */
 
-h1 {
-    text-align: center;
-    padding: 0rem;
-    margin: 0rem;
-    background-color: brown;
-    color: white;
-    border-radius: 1rem;
-    outline-offset: -0.2rem;
-    outline: 0.2rem dashed darkred;
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  background: lightblue;
 }
+
+.header {
+  border-bottom: 0.2rem solid gray;
+  height: 10vh;
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+
+}
+
+.logoText {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  color: aliceblue;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px black, -1px -1px black;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+} 
+
+.button {
+  padding: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  background-color:red;
+  color: aliceblue;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 2px rgb(73, 73, 73), inset -5px -5px 10px darkred,inset 5px 5px 20px lightcoral;
+}
+
+#newGame {
+  font-size: 2rem;
+  font-weight: bold;
+  outline: 1px solid rgb(113, 0, 0);
+
+}
+
+.button:hover {
+  text-shadow: 2px 2px lightcoral, -1px -1px lightcoral;
+
+}
+.button:active {
+  box-shadow:inset 5px 5px 10px darkred,inset -5px -5px 20px lightcoral,inset -2px -2px 5px darkred;
+
+}
+
+
+.midler {
+  height: 85vh;
+  display: flex;
+
+  padding: 3rem;
+}
+
+.footer {
+  border-top: 0.2rem solid gray;
+  height: 5vh;
+  background-color: darkgray;
+}
+
+.gamefield {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-end;
+  outline: 1px solid red  ;
+
+}
+
+.nameField {
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  font-family: Impact;
+  letter-spacing: 0.25rem;
+  font-size: 2.9rem;
+}
+
+.nameField:first-child{
+  color: blue;
+}
+.nameField:last-child{
+  color: red;
+}
+
+.boardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid red  ;
+
+}
+
+.shipMenu {
+  width: 20vw;
+  height: 34vw;
+  align-self: flex-end;
+  background-color: darkgrey;
+  outline: 0.2rem solid gray;
+  outline-offset: - 0.2rem;
+}
+
+.zeroMeridian {
+  width: 5%;
+  height: 100%;
+  
+}
+
+.board {
+  width: 34vw;
+  height: 34vw;
+  outline-offset: -3px;
+  outline: 3px dashed white;
+}
+
+.cell {
+  width: 5vw;
+  height: 5vw;
+  outline: 3px dashed white;
+}
+
+.shipCell {
+
+}
+
+.shipPlacementCell {
+
+}
+
